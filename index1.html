@@ -219,14 +219,14 @@ var jsonObjects = {"accuracy":"5","bearing":"0","chauffeurId":"208350","deviceId
         url:'https://to14mflioe.execute-api.us-east-1.amazonaws.com/Sys/storegpsdata',
         data:JSON.stringify(jsonObjects),
         error: function (data) {
-            alert('error'+data);
-            console.log(data);
+           // alert('error'+data);
+          //  console.log(data);
         },
         success:function(msg){
             if(msg){
-             alert('success'+msg)
+             //alert('success'+msg)
             }else{
-               alert('Unsuccess'+msg)
+              // alert('Unsuccess'+msg)
             }
         }
     });
