@@ -209,7 +209,7 @@ var tnow = new Date();
 
 function showPosition(position) {
 
-var jsonObjects = {"accuracy":"5","bearing":"0","chauffeurId":"208350","deviceId":"03B41D62-FB69-5B6D-A95E-473842F4DFE3","heading":"","publishDate": "2017-12-07T02:56:46Z","resNum":" ","source":"chauffeur","spId":"WA_SP_1103","velocity":"","latitude":"27.370461","longitude":"-77.03137"};
+var jsonObjects = {"accuracy":"5","bearing":"0","chauffeurId":"208350","deviceId":"03B41D62-FB69-5B6D-A95E-473842F4DFE3","heading":"","publishDate": ""+dateString,"resNum":" ","source":"chauffeur","spId":"WA_SP_1103","velocity":"","latitude":""+position.coords.latitude,"longitude":""+position.coords.longitude};
 //alert('alert'+jsonObjects)		
  $.ajax({
         type:'POST',
@@ -219,14 +219,14 @@ var jsonObjects = {"accuracy":"5","bearing":"0","chauffeurId":"208350","deviceId
         url:'https://to14mflioe.execute-api.us-east-1.amazonaws.com/Sys/storegpsdata',
         data:JSON.stringify(jsonObjects),
         error: function (data) {
-            alert('error'+data);
-            console.log(data);
+           // alert('error'+data);
+          //  console.log(data);
         },
         success:function(msg){
             if(msg){
-             alert('success'+msg)
+            // alert('success'+msg)
             }else{
-               alert('Unsuccess'+msg)
+            //   alert('Unsuccess'+msg)
             }
         }
     });
