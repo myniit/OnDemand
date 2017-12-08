@@ -209,16 +209,18 @@ var tnow = new Date();
 
 function showPosition(position) {
 
-var jsonObjects = {"accuracy":"5","bearing":"0","chauffeurId":"7967976","deviceId":"03B41D62-FB69-5B6D-A95E-473842F4DFE3","heading":"","publishDate": dateString,"resNum":" ","source":"chauffeur","spId":"WA_SP_3204","velocity":"","latitude":position.coords.latitude,"longitude":position.coords.longitude};
+var jsonObjects = {"accuracy":"5","bearing":"0","chauffeurId":"208350","deviceId":"03B41D62-FB69-5B6D-A95E-473842F4DFE3","heading":"","publishDate": dateString,"resNum":" ","source":"chauffeur","spId":"WA_SP_1103","velocity":"","latitude":position.coords.latitude,"longitude":position.coords.longitude};
 //alert('alert'+jsonObjects)		
  $.ajax({
         type:'POST',
+        crossDomain: true,
         contentType:'application/json',
         headers:{'x-api-key': 'n2FCisef2W8Me79uiFEiK87iJUHzjNjn42dLchS4'},
         url:'https://to14mflioe.execute-api.us-east-1.amazonaws.com/Sys/storegpsdata',
         data:JSON.stringify(jsonObjects),
-        error: function (error) {
-            alert('success'+error);
+        error: function (data) {
+            alert('error'+data);
+            console.log(data);
         },
         success:function(msg){
             if(msg){
